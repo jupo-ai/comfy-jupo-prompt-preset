@@ -6,7 +6,7 @@
 
 ## Install
 
-1. custom_nodesフォルダにリポジトリをクローン
+1. custom_nodesフォルダにリポジトリをクローン  
    `git clone https://github.com/jupo-ai/comfy-jupo-prompt-preset`
 
 
