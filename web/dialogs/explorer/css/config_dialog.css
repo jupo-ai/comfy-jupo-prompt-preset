@@ -1,0 +1,150 @@
+.jupo-preset-explorer-config-overlay {
+    --bg: #2e414d;
+    --text: #e2e8f0;
+    --overlay-bg: rgba(0, 0, 0, 0);
+    --border: #4a5568;
+    --radius: 12px;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --icon-color: #a0aec0;
+    --icon-hover: #e2e8f0;
+}
+
+.jupo-preset-explorer-config-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+}
+
+.jupo-preset-explorer-config {
+    position: relative;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--font);
+    overflow: auto;
+    padding: 8px;
+    width: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.jupo-preset-explorer-config-item {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.jupo-preset-explorer-config-item-label {
+    width: 50%;
+    border-right: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+}
+
+
+/* --- スライダー --- */
+
+.jupo-preset-explorer-config-item-slider {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.jupo-preset-explorer-config-item-slider > button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.jupo-preset-explorer-config-item-slider > button:hover {
+    transform: scale(1.05);
+    color: var(--icon-hover);
+    
+}
+
+/* --- トグルスイッチ --- */
+
+.jupo-preset-explorer-config-item-toggle {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jupo-preset-explorer-config-item-toggle-switch {
+    /* ----- サイズ調整用変数 ----- */
+    --jupo-toggle-width: 32px; /* スイッチ全体の幅 */
+    --jupo-toggle-height: 20px; /* スイッチ全体の高さ */
+    --jupo-toggle-border-width: 2px; /* 境界線の太さ */
+    --jupo-toggle-knob-offset: 2px; /* ツマミと境界線の間の余白 */
+
+    /* ----- 自動計算される変数（変更不要）----- */
+    --jupo-toggle-knob-size: calc(var(--jupo-toggle-height) - (var(--jupo-toggle-border-width) * 2) - (var(--jupo-toggle-knob-offset) * 2));
+    --jupo-toggle-translate-x: calc(var(--jupo-toggle-width) - var(--jupo-toggle-knob-size) - (var(--jupo-toggle-border-width) * 2) - (var(--jupo-toggle-knob-offset) * 2));
+
+    position: relative;
+    display: inline-block;
+    width: var(--jupo-toggle-width);
+    height: var(--jupo-toggle-height);
+    cursor: pointer;
+}
+
+.jupo-preset-explorer-config-item-toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.jupo-preset-explorer-config-item-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    transition: all 0.2s ease;
+    border-radius: var(--jupo-toggle-height);
+    border: var(--jupo-toggle-border-width) solid var(--border);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.jupo-preset-explorer-config-item-toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: var(--jupo-toggle-knob-size);
+    width: var(--jupo-toggle-knob-size);
+    left: var(--jupo-toggle-knob-offset);
+    bottom: var(--jupo-toggle-knob-offset);
+    background: linear-gradient(145deg, #ffffff 0%, #f7fafc 100%);
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.jupo-preset-explorer-config-item-toggle-input:checked + .jupo-preset-explorer-config-item-toggle-slider {
+    background: linear-gradient(135deg, #68d391 0%, #48bb78 100%);
+    border-color: #48bb78;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(104, 211, 145, 0.2);
+}
+
+.jupo-preset-explorer-config-item-toggle-input:checked + .jupo-preset-explorer-config-item-toggle-slider::before {
+    transform: translateX(var(--jupo-toggle-translate-x));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

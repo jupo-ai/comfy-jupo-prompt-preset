@@ -1,0 +1,114 @@
+/* --- 全体コンテナ --- */
+.jupo-preset-editor-preview {
+    background: #1a202c;
+    padding: 24px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.jupo-preset-editor-preview-media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    background: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+}
+
+
+/* --- アクションボタン --- */
+.jupo-preset-editor-preview-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+    padding-top: 12px;
+    gap: 12px;
+    border-top: 1px solid #2d3748;
+}
+
+.jupo-preset-editor-preview-actions > button {
+    background: #4a5568;
+    color: #e2e8f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.jupo-preset-editor-preview-actions > button.upload:hover {
+    color: #1a202c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #68d391;
+}
+
+.jupo-preset-editor-preview-actions > button.delete:hover {
+    color: #1a202c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #e53e3e;
+}
+
+
+/* --- 新規作成モード時の蓋 --- */
+.jupo-preset-editor-preview-disable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 32, 44, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 10;
+    text-wrap: balance;
+}
+
+
+/* --- 空のプレビュー --- */
+.jupo-preset-editor-preview-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    color: #718096;
+    font-size: 16px;
+    padding: 24px;
+}
+
+.jupo-preset-editor-preview-empty::before {
+    content: "🖼️";
+    font-size: 64px;
+    opacity: 0.4;
+}
+
+
+/* --- メディア要素 --- */
+.jupo-preset-editor-preview-media {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.jupo-preset-editor-preview-media--video {
+    background-color: black;
+}
+
+.jupo-preset-editor-preview-media--audio {
+    width: 90%;
+    max-width: 350px;
+}
+
