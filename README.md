@@ -12,7 +12,9 @@
 
 ## Prompt Reciever 使い方
 
-1. 画面左のサイドパネルからプリセットエクスプローラを開きます
+1. 画面左のサイドパネルからプリセットエクスプローラを開きます  
+   この時、ComfyUI設定の`Unified sidebar width`をOFFにしておくことをお勧めします  
+   ![sample](https://files.catbox.moe/agt0wq.png)
 2. 新規作成ボタンを押します  
    ![sample](https://files.catbox.moe/t2q491.png)
 3. ファイル編集ダイアログが表示されるので入力します  
