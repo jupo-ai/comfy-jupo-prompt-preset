@@ -94,7 +94,7 @@ export class PresetExplorerSidebar extends BasePresetExplorer {
     // ------------------------------------------
     onFileClicked(fileNode) {
         this.callback?.(fileNode);
-        this.updatePathCallback?.(fileNode);
+        this.updatePathCallback?.(fileNode.fullPath);
     }
 
 
